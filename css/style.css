@@ -1,12 +1,13 @@
 /* RESET CSS */
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body, h1, h2, p, ul, li, a {
-    margin: 0;
-    padding: 0;
+html {
+  font-size: 62.5%; /* O font-size base passa a ser 10px */
 }
 
 body {
@@ -27,11 +28,23 @@ img {
   max-width: 100%; /* Evita que as imagens estorem os seus containers */
 }
 
+/* Variables */
+:root {
+  /* sizes */
+  --max-width: 960px;
+
+  /* colors */
+  --primary-blue: #122ab2;
+  --secondary-blue: #2B64FF;
+  --text-gray: #7c7c7c;
+  --white: #fff;
+}
+
 /* SUPERINFO */
 
 .superinfo-bg {
-  background: #122ab2;
-  color: white;
+  background: var(--primary-blue);
+  color: var(--white);
 }
 
 .superinfo {
@@ -39,8 +52,9 @@ img {
   justify-content: space-between;
   margin: 0 auto;
   padding: 10px 0;
-  max-width: 960px;
+  max-width: var(--max-width);
   flex-wrap: wrap;
+  font-size: 1.6rem;
 }
 
 .superinfo p, .superinfo a {
@@ -48,14 +62,14 @@ img {
 }
 
 .superinfo a {
-  color: white;
+  color: var(--white);
 }
 
 /* MENU */
 
 .menu-bg {
-  background: #2B64FF;
-  color: white;
+  background: var(--secondary-blue);
+  color: var(--white);
 }
 
 .menu {
@@ -64,16 +78,16 @@ img {
   align-items: center;
   flex-wrap: wrap;
   padding: 15px 0;
-  max-width: 960px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .menu a {
-  color: white;
+  color: var(--white);
 }
 
 .menu-logo a {
-  font-size: 36px;
+  font-size: 3.6rem;
   font-weight: bold;
   margin: 0 10px; /* cria o espaçcamento padrão da esquerda e evita que o menu cole na logo */
 }
@@ -84,7 +98,7 @@ img {
 }
 
 .menu-nav a {
-  font-size: 20px;
+  font-size: 2rem;
   display: block; /* para conseguir colocar o padding */
   padding: 10px;
   transition: 0.3s;
@@ -92,5 +106,48 @@ img {
 }
 
 .menu-nav a:hover {
-  background: #122ab2;
+  background: var(--primary-blue);
+}
+
+/* Intro */
+
+.intro {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 10px;
+  font-size: 4.8rem;
+  line-height: 1;
+}
+
+/* About */
+.about {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-top: 2px solid var(--secondary-blue);
+  border-bottom: 2px solid var(--secondary-blue);
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-info {
+  flex: 2 1 300px;
+  margin: 0 10px;
+}
+
+.about-info h1 {
+  font-size: 4.8rem;
+  margin-bottom: 1rem
+}
+
+.about-info p {
+  color: var(--text-gray);
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.about-img {
+  flex: 1 1 160px; /* flex-grow: 1; flex-shrink: 1; flex-basis: 160px === ocupa 1 espaço, permite reduzir até 1x o tamanho e largura base é 160px*/
+  margin: 0 10px;
 }
