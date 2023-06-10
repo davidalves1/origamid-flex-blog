@@ -420,3 +420,20 @@ input {
 .newsletter-form button:hover {
   background: var(--primary-blue);
 }
+
+/* Footer */
+
+.footer {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-blue);
+}
+
+.footer p {
+  margin: 0 10px;
+  color: var(--primary-blue);
+  font-size: 3rem;
+  text-align: center;
+}
